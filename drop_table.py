@@ -13,8 +13,11 @@
 """
 from FullFlask import db
 from FullFlask import create_app
+from FullFlask import models
 
 app = create_app()
 with app.app_context():
     # db.drop_all()
-    db.create_all()
+    # db.create_all()
+    data = db.session.query(models.Users).all()
+    print(data)
