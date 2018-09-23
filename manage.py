@@ -12,6 +12,18 @@ from flask_script import Manager
 app = create_app()
 manager = Manager(app)
 
+
+@manager.command
+def custom(arg):
+    print(arg)
+
+
+@manager.option('-n', '--name', dest='name')
+@manager.option('-u', '--url', dest='url')
+def cmd(name, url):
+    print(name, url)
+
+
 if __name__ == '__main__':
     # app.run()
     manager.run()
