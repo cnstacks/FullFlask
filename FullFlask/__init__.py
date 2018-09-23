@@ -15,7 +15,7 @@ db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
-    app.config.from_object("settings.DevConfig")
+    app.config.from_object("settings.DevelopmentConfig")
     from .views.accounts import ac
     app.register_blueprint(ac)
 
