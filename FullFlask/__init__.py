@@ -7,10 +7,15 @@
 # Author  : 天晴天朗
 # Email   : tqtl@tqtl.org
 from flask import Flask
-from .views.accounts import ac
+from flask_sqlalchemy import SQLAlchemy
+
+# 包含了SQLAlchemy相关的所有操作；
+db = SQLAlchemy()
 
 
 def create_app():
+    from .views.accounts import ac
     app = Flask(__name__)
     app.register_blueprint(ac)
+    db.init_app(app)
     return app

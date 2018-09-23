@@ -11,28 +11,29 @@ from sqlalchemy import Column, Integer, String, UniqueConstraint, Index, DateTim
 from sqlalchemy import create_engine
 from sqlalchemy.orm import relationship
 import datetime
+from FullFlask import db
 
-Base = declarative_base()
+
+# Base = declarative_base()
 
 
-class Users(Base):
+class Users(db.Model):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(32), nullable=True, unique=True)
 
-
-def init_db():
-    # 数据库连接相关;
-    engine = create_engine("mysql+pymysql://root:Tqtl911!@%*)@mysql.cuixiaozhao.com:3306/FullFlask?charset=utf8")
-    Base.metadata.create_all(engine)
-
-
-def drop_db():
-    engine = create_engine("mysql+pymysql://root:Tqtl911!@%*)@mysql.cuixiaozhao.com:3306/FullFlask?charset=utf8")
-    # 删除表;
-    Base.metadata.drop_all(engine)
+# def init_db():
+#     # 数据库连接相关;
+#     engine = create_engine("mysql+pymysql://root:Tqtl911!@%*)@mysql.cuixiaozhao.com:3306/FullFlask?charset=utf8")
+#     Base.metadata.create_all(engine)
 
 
-if __name__ == '__main__':
-    # drop_db()
-    init_db()
+# def drop_db():
+#     engine = create_engine("mysql+pymysql://root:Tqtl911!@%*)@mysql.cuixiaozhao.com:3306/FullFlask?charset=utf8")
+#     # 删除表;
+#     Base.metadata.drop_all(engine)
+#
+#
+# if __name__ == '__main__':
+#     # drop_db()
+#     init_db()
