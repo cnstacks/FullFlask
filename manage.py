@@ -21,6 +21,14 @@ def custom(arg):
 @manager.option('-n', '--name', dest='name')
 @manager.option('-u', '--url', dest='url')
 def cmd(name, url):
+    """
+    自定义命令：
+    执行:python manage.py cmd -n cuixiaozhao -u http://cuixiaozhao.com
+    执行:python manage.py cmd --name cuixiaozhao --url http://cuixiaozhao.com
+    :param name:
+    :param url:
+    :return:
+    """
     print(name, url)
 
 
