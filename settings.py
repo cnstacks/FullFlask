@@ -26,3 +26,16 @@ class DevelopmentConfig(BaseConfig):
 
 class TestConfig(BaseConfig):
     pass
+
+
+"""
+小结:
+1、flask-sqlalchemy的作用:将SQLAlchemy相关的所有功能都封装到db=flask_sqlalchemy.SQLAlchemy()对象中；
+    -创建表;
+    class Users( ):
+        pass
+        
+    -操作表;
+    db.session
+
+"""
