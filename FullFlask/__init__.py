@@ -14,8 +14,10 @@ db = SQLAlchemy()
 
 
 def create_app():
-    from .views.accounts import ac
     app = Flask(__name__)
+    app.config.from_object("settings.DevConfig")
+    from .views.accounts import ac
     app.register_blueprint(ac)
+
     db.init_app(app)
     return app
